@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6e325f87-faa6-446a-b33c-d656a94d8c9e">
+	<property name="ireport.zoom" value="1.1000000000000012"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="semest" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select *, (select ips from tabel_ip where semester = (select ti from temporary where id=1)) "ips", (select ti from temporary where id=1)"semester", (select total_sks from tabel_ip where semester = (select ti from temporary where id=1))"tot_sks" from tabel_nilai where semester = (select ti from temporary where id=1)]]>
+	</queryString>
+	<field name="semester" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status_praktikum" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mata_kuliah" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sks" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="uts" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="puts" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kuts" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="uas" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="puas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kuas" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tugas" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ptugas" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ktugas" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="modul" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pmodul" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kmodul" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kumulasi" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="huruf" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bobot" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nilai_akhir" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ips" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tot_sks" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5e626443-0ede-4ac2-bc4f-2fe8782617e5" x="0" y="0" width="555" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Century Gothic" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[itung IP]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="69d28967-57c0-4471-91bb-d8d13289e357" x="435" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="b5f225a5-084b-498a-8435-f9cf3662327c" x="515" y="0" width="40" height="20"/>
+				<textElement>
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5e626443-0ede-4ac2-bc4f-2fe8782617e5" x="0" y="0" width="64" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Dicetak : ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy HH.mm.ss">
+				<reportElement uuid="06e38136-afb2-457b-89f6-4fcdf5919ee6" x="64" y="1" width="241" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="dab10772-f66a-44a4-9268-d09f25b14075" x="420" y="1" width="47" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total SKS]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="846b2a04-3546-4c54-b7bd-c1ac56541aec" x="483" y="1" width="34" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tot_sks}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="dab10772-f66a-44a4-9268-d09f25b14075" x="420" y="21" width="33" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IPS              : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="17bfb727-caeb-44c2-a790-afc30f6fd414" x="483" y="21" width="72" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ips}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="dab10772-f66a-44a4-9268-d09f25b14075" x="467" y="1" width="16" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dab10772-f66a-44a4-9268-d09f25b14075" x="467" y="21" width="16" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="0" y="41" width="275" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="dab10772-f66a-44a4-9268-d09f25b14075" x="0" y="41" width="278" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mata Kuliah]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="275" y="41" width="30" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="ee546fda-be4d-432d-861f-0886df4bc680" x="275" y="41" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SKS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="305" y="41" width="30" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="8b3f45d1-8cb3-43be-b6bf-a6ffe36d4629" x="305" y="41" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UTS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="335" y="41" width="29" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="5d592ff4-42a4-4cc3-8865-951de30e4919" x="335" y="41" width="29" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UAS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="364" y="41" width="38" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="b016bb1d-5e93-41b3-ae01-d8058f966bff" x="364" y="41" width="38" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modul]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="402" y="41" width="51" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="453" y="41" width="51" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="504" y="41" width="51" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="d6fee243-a13c-4023-9ca8-8e5554ccffca" x="402" y="41" width="51" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rata-rata]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cbbf46b1-f967-4935-99f3-7d943182578f" x="453" y="41" width="51" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Huruf]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ba0eb62b-e26b-4243-9a28-6cd3f18ca5e1" x="504" y="41" width="51" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bobot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5e626443-0ede-4ac2-bc4f-2fe8782617e5" x="0" y="11" width="555" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Semester     ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c75d0fdc-7e3f-4775-b232-e60d91518175" x="302" y="11" width="100" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semester}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="0" y="0" width="275" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="275" y="0" width="30" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="305" y="0" width="30" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="335" y="0" width="29" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="364" y="0" width="38" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="20a983d0-9d73-4cd6-b87e-d2d4e8e9ea65" x="275" y="0" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5686515e-ff74-4975-b9d5-63025fdb42ef" x="305" y="0" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{uts}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c232ffc4-017a-4f3e-a282-dfa31fab6810" x="335" y="0" width="29" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{uas}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="402" y="0" width="51" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="504" y="0" width="51" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="17711cba-5715-4201-ae2e-45fcb2bada7a" x="453" y="0" width="51" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="8a521c61-62a3-440c-a078-743629fbf597" x="364" y="0" width="38" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{modul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4dacec17-e218-4fb2-8ca6-e26e0f442dcf" x="0" y="0" width="275" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mata_kuliah}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7bc78ddb-c430-459d-a248-9c2d6a647a6a" x="402" y="0" width="51" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kumulasi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dc703f96-ae3c-45d9-928f-902a4c9f972a" x="453" y="0" width="51" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{huruf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cca40d09-58f9-48bb-a749-f52837796ff4" x="504" y="0" width="51" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bobot}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="36" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

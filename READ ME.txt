@@ -1,0 +1,10 @@
+Panduan menggunakan aplikasi itung IP
+
+1. pastikan device yang anda gunakan terinstal aplikasi XAMPP dan Java versi diatas 2.XX
+2. buat database baru di phpMyAdmin dengan nama ' nilai '
+3. Nyalakan MySQL pada aplikasi XAMPP
+4. Masuk kedalam phpMyAdmin dan pilih database nilai dan masuk ke tab import dan lakukan import data berupa file SQL dalam folder ini
+5. Aplikasi siap digunakan
+
+2019 (c) itung IP Aprianto
+Open Source Project File : apriantoa917@gmail.com
