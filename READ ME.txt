@@ -7,4 +7,3 @@ Panduan menggunakan aplikasi itung IP
 5. Aplikasi siap digunakan
 
 2019 (c) itung IP Aprianto
-Open Source Project File : apriantoa917@gmail.com
